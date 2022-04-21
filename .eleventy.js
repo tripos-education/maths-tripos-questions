@@ -28,6 +28,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  // Add KaTeX
+  let markdownIt = require("markdown-it");
+  let markdownItKaTeX = require('@iktakahiro/markdown-it-katex');
+  let options = {
+    
+  };
+  let markdownLib = markdownIt(options).use(markdownItKaTeX);
+  
+  eleventyConfig.setLibrary("md", markdownLib);
+
   // setup mermaid markdown highlighter
   const highlighter = eleventyConfig.markdownHighlighter;
   eleventyConfig.addMarkdownHighlighter((str, language) => {
@@ -54,8 +64,13 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('excerpt', (post) => {
-    const content = post.replace(/(<([^>]+)>)/gi, '');
+    content = post
+    // const content = post.replace(/(<([^>]+)>)/gi, '');
     return content.substr(0, content.lastIndexOf(' ', 200)) + '...';
+  });
+
+  eleventyConfig.addFilter("md", function (content = "") {
+    return markdownIt({ html: true }).use(markdownItKaTeX).render(content);
   });
 
   eleventyConfig.addFilter('readableDate', (dateObj) => {
@@ -79,6 +94,23 @@ module.exports = function (eleventyConfig) {
 
     return array.slice(0, n);
   });
+  
+  for (let year = 2002; year <= 2022; year++) {
+    eleventyConfig.addCollection(String(year), collection => {
+      return collection.getFilteredByTag("ia-questions").filter(post => post.data.year === year)
+    })
+  }
+
+  eleventyConfig.addCollection('iaCourseList', function (collection) {
+    let courseSet = new Set();
+    collection.getFilteredByTag("ia-questions").forEach(function (item) {
+      if ('course' in item.data) {
+        courseSet.add(item.data.course)
+      }
+    });
+
+    return [...courseSet];
+  });
 
   eleventyConfig.addCollection('tagList', function (collection) {
     let tagSet = new Set();
@@ -91,6 +123,7 @@ module.exports = function (eleventyConfig) {
             case 'all':
             case 'nav':
             case 'post':
+            case 'papers':
             case 'posts':
               return false;
           }
@@ -108,7 +141,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('pageTags', (tags) => {
-    const generalTags = ['all', 'nav', 'post', 'posts'];
+    const generalTags = ['all', 'nav', 'post', 'posts', 'questions'];
 
     return tags
       .toString()

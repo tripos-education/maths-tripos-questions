@@ -1,22 +1,27 @@
 {
-  "name": "Eleventy Duo",
-  "description": "Eleventy Duo is a minimal and beautiful Eleventy theme for personal blogs.",
+  "name": "Mathematics Tripos Papers",
+  "description": "An archive of questions from the Cambridge Mathematics Tripos",
   "url": "https://eleventyduo.netlify.app",
   "author": {
-    "name": "Author Name",
+    "name": "Austen Lamacraft",
     "email": "author@site.com",
-    "twitterHandle": "author_handle"
+    "twitterHandle": "@AustenLamacraft"
   },
   "defaultSocialImage": "/images/default-social-image.png",
   "headerLinks": [
     {
-      "text": "Blog",
-      "url": "/blog",
+      "text": "Part IA",
+      "url": "/ia",
       "external": false
     },
     {
-      "text": "About",
-      "url": "/about",
+      "text": "Part IB",
+      "url": "/ib",
+      "external": false
+    },
+    {
+      "text": "Part II",
+      "url": "/ii",
       "external": false
     }
   ],

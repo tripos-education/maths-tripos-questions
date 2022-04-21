@@ -40,6 +40,7 @@
     "clean": "rm -rf ./public"
   },
   "dependencies": {
+    "@iktakahiro/markdown-it-katex": "^4.0.1",
     "remove": "^0.1.5"
   }
 }

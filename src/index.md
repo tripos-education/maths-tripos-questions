@@ -1,8 +1,10 @@
 ---
 layout: home
-title: 'Eleventy Duo'
+title: 'Introduction'
 ---
 
-# Hello World
+An archive of questions from the [Cambridge Mathematics Tripos](https://www.maths.cam.ac.uk/undergrad/pastpapers/past-ia-ib-and-ii-examination-papers). 
 
-Eleventy Duo is a minimal and beautiful Eleventy theme for personal blogs. Checkout the [project's github repo](https://github.com/yinkakun/eleventy-duo) for more info.
+Each question has a separate page, and you can add comments or questions to each.
+
+Let me know if you discover any problems!

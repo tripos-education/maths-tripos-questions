@@ -6,11 +6,7 @@ layout: base.njk
   <header class="post__header">
     <h1>{{ title }}</h1>
     <div class="post__details">
-      <time datetime="{{ page.date | htmlDateString }}">
-        {{ page.date | readableDate }}
-      </time>
-      <span> | </span>
-      <span>{{ content | readingTime }} read</span>
+      {{ year }}
     </div>
   </header>
 
