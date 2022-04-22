@@ -2,7 +2,7 @@
 pagination:
   data: collections
   size: 1
-  alias: tag
+  alias: course
   filter:
     - all
     - nav
@@ -12,12 +12,12 @@ pagination:
     - tagList
   addAllPagesToCollections: true
 layout: base.njk
-permalink: /tags/{{ tag }}/
+permalink: /courses/{{ course }}/
 eleventyComputed:
-  title: "{{ tag | title }}"
-  description: "All posts tagged “{{ tag }}”"
+  title: "{{ course | title }}"
+  description: "All posts tagged “{{ course }}”"
 ---
-<h1>{{ tag | title }}</h1>
+<h1>{{ course | title }}</h1>
 
-{% set postslist = collections[tag] %}
+{% set postslist = collections[course] %}
 {% include "posts-list.njk" %}

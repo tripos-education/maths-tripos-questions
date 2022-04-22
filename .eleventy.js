@@ -94,10 +94,17 @@ module.exports = function (eleventyConfig) {
 
     return array.slice(0, n);
   });
-  
-  for (let year = 2002; year <= 2022; year++) {
-    eleventyConfig.addCollection(String(year), collection => {
-      return collection.getFilteredByTag("ia-questions").filter(post => post.data.year === year)
+
+  const iaYearList = Array.from(new Array(21), (x, i) => String(i + 2001));
+
+  eleventyConfig.addCollection('iaYearList', function (collection) {
+    // return [...new Set(collection.getFilteredByTag("ia-questions").map(post => String(post.data.year)))]
+    return iaYearList
+  });
+
+  for (const year of iaYearList) {
+    eleventyConfig.addCollection("ia-" + year, collection => {
+      return collection.getFilteredByTags("IA", year)
     })
   }
 
@@ -150,6 +157,9 @@ module.exports = function (eleventyConfig) {
         return !generalTags.includes(tag);
       });
   });
+
+  eleventyConfig.addFilter("inspect", require("util").inspect);
+
 
   eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
     if ( outputPath && outputPath.endsWith(".html") && isProd) {

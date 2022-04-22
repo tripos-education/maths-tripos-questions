@@ -3,16 +3,20 @@
     <li class="post-list__item">
       <div>
         <div class="post-list__tags">
-          {% set courseUrl %}/course/{{ post.data.course }}/{% endset %}
+          {% set courseUrl %}/courses/{{ post.data.course }}/{% endset %}
           <a href="{{ courseUrl | url }}">#{{ post.data.course }}</a>
         </div>
       </div>
 
-      <h3 class="post-list__title">
+      <h2 class="post-list__title">
         <a  href="{{ post.url }}">{{ post.data.title | md | safe }}</a>
-      </h3>
+      </h2>
+              
+      <div class="post__details">
+          {{ post.data.year }}
+      </div>
 
-      <!-- <p class="post-list__excerpt">{{ post.templateContent | md | safe  }}</p> -->
+      <p class="post-list__excerpt">{{ post.templateContent | md | safe  }}
     </li>
   {% endfor %}
 </ul>

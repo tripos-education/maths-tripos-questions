@@ -4,8 +4,14 @@ layout: base.njk
 
 <article class="post">
   <header class="post__header">
-    <h1>{{ title }}</h1>
+    <h1>{{ title | md | safe }}</h1>
     <div class="post__details">
+      <div>
+        <div class="post-list__tags">
+          {% set courseUrl %}/courses/{{ course }}/{% endset %}
+          <a href="{{ courseUrl | url }}">#{{ course }}</a>
+        </div>
+      </div>
       {{ year }}
     </div>
   </header>
@@ -14,14 +20,8 @@ layout: base.njk
     {{ content | safe }}
   </main>
 
-  <aside class="post__aside">
-    <div class="post__tags">
-      {% for tag in tags | pageTags %}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}">#{{ tag }}</a>
-      {% endfor %}
-    </div>
-
+  <aside class="post__aside">    
+  
     <nav class="post__pagination">
       {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
       {%- if nextPost %}

@@ -1,0 +1,6 @@
+{% for year in collections.iaYearList %}
+  {% set yearUrl %}/ia/{{ year }}/{% endset %}
+
+  <a href="{{ yearUrl | url }}" class="post-tag">{{ year }}</a>
+
+{% endfor %}
