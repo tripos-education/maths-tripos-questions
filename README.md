@@ -14,9 +14,11 @@
 
 - [ ] Add "comment on" to each question in post list
 
-- [ ] Add Google analytics
+- [X] Add Google analytics
 
-- [ ] Add tripos domain
+- [x] Add tripos domain
+
+- [ ] SEO and keywords
 
 # Eleventy Duo
 
