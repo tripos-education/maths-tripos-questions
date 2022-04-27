@@ -5,7 +5,7 @@
   "author": {
     "name": "Austen Lamacraft",
     "email": "author@site.com",
-    "twitterHandle": "@AustenLamacraft"
+    "twitterHandle": "@tripos"
   },
   "defaultSocialImage": "/images/default-social-image.png",
   "headerLinks": [
@@ -28,11 +28,6 @@
   "socialLinks": [
   ],
   "footerLinks": [
-    {
-      "text": "RSS",
-      "url": "/feed.xml",
-      "external": true
-    }
   ],
   "showFooterAttribution": true
 }

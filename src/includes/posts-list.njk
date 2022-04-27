@@ -17,6 +17,8 @@
       </div>
 
       <p class="post-list__excerpt">{{ post.templateContent | md | safe  }}
+
+      <a class="post-list__read-more" href="{{ post.url }}">comment</a>
     </li>
   {% endfor %}
 </ul>

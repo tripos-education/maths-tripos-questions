@@ -1,10 +1,14 @@
 ---
 layout: home
 title: 'Introduction'
+html: true
 ---
 
 An archive of questions from the [Cambridge Mathematics Tripos](https://www.maths.cam.ac.uk/undergrad/pastpapers/past-ia-ib-and-ii-examination-papers). 
 
-Each question has a separate page, and you can add comments or questions to each.
+You can comment on any question (requires a [GitHub](https://github.com/) account)
 
-Let me know if you discover any problems!
+If you discover any problems let us know by email to [hello@tripos.org](mailto:hello@tripos.org) or by commenting below.
+
+{% include "tripos-comments.html" %}
+

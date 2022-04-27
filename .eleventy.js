@@ -32,7 +32,7 @@ module.exports = function (eleventyConfig) {
   let markdownIt = require("markdown-it");
   let markdownItKaTeX = require('@iktakahiro/markdown-it-katex');
   let options = {
-    
+    html: true
   };
   let markdownLib = markdownIt(options).use(markdownItKaTeX);
   
@@ -179,11 +179,11 @@ module.exports = function (eleventyConfig) {
       output: 'public',
       includes: 'includes',
       data: 'data',
-      layouts: 'layouts',
-      passthroughFileCopy: true,
-      templateFormats: ['html', 'njk', 'md'],
-      htmlTemplateEngine: 'njk',
-      markdownTemplateEngine: 'njk',
+      layouts: 'layouts'
     },
+    passthroughFileCopy: true,
+    templateFormats: ['html', 'njk', 'md'],
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
   };
 };

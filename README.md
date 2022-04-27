@@ -1,3 +1,23 @@
+# TODOs
+
+- [x] Deployment 
+
+- [x] Add KaTeX [copy-tex](https://github.com/KaTeX/KaTeX/tree/main/contrib/copy-tex) extension.
+
+- [ ] Fix missing subjects
+
+- [ ] Update "powered by giscus" and add KaTeX message
+
+- [ ] Add comment counts for giscus. This seems a bit harder see [this PR](https://github.com/giscus/giscus/pull/198)
+
+- [ ] Downloading images from Mathpix CDN. Missing dagger in 1.II.6B (2005)
+
+- [ ] Add "comment on" to each question in post list
+
+- [ ] Add Google analytics
+
+- [ ] Add tripos domain
+
 # Eleventy Duo
 
 Eleventy Duo is a minimal and beautiful Eleventy theme for personal blogs.

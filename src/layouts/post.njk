@@ -20,29 +20,6 @@ layout: base.njk
     {{ content | safe }}
   </main>
 
-  <aside class="post__aside">    
-  
-    <nav class="post__pagination">
-      {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
-      {%- if nextPost %}
-
-        <a href="{{ nextPost.url | url }}">
-          <span>←</span>
-          <span>{{ nextPost.data.title }}</span>
-        </a>
-
-      {% endif %}
-
-      {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-      {%- if previousPost %}
-
-        <a href="{{ previousPost.url | url }}">
-          <span>{{ previousPost.data.title }}</span>
-          <span>→</span>
-        </a>
-
-      {% endif %}
-    </nav>
-  </aside>
+  {% include "tripos-comments.html" %}
 
 </article>
