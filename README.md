@@ -4,7 +4,7 @@
 
 - [x] Add KaTeX [copy-tex](https://github.com/KaTeX/KaTeX/tree/main/contrib/copy-tex) extension.
 
-- [ ] Fix missing subjects
+- [x] Fix missing subjects
 
 - [ ] Update "powered by giscus" and add KaTeX message
 
@@ -14,7 +14,7 @@
 
 - [ ] Add "comment on" to each question in post list
 
-- [X] Add Google analytics
+- [x] Add Google analytics
 
 - [x] Add tripos domain
 
