@@ -1,0 +1,13 @@
+--- 
+layout: base.njk 
+pagination:
+    data: collections.yearList
+    size: 1
+    alias: year
+permalink: "ib/{{ year | slug }}/"
+---
+
+<h1>Part IB {{ year }}</h1>
+
+{% set postslist = collections["ib-" + year] %}
+{% include "posts-list.njk" %}

@@ -95,22 +95,36 @@ module.exports = function (eleventyConfig) {
     return array.slice(0, n);
   });
 
-  const iaYearList = Array.from(new Array(21), (x, i) => String(i + 2001));
+  const yearList = Array.from(new Array(21), (x, i) => String(i + 2001));
 
-  eleventyConfig.addCollection('iaYearList', function (collection) {
+  eleventyConfig.addCollection('yearList', function (collection) {
     // return [...new Set(collection.getFilteredByTag("ia-questions").map(post => String(post.data.year)))]
-    return iaYearList
+    return yearList
   });
 
-  for (const year of iaYearList) {
+  for (const year of yearList) {
     eleventyConfig.addCollection("ia-" + year, collection => {
       return collection.getFilteredByTags("IA", year)
+    })
+    eleventyConfig.addCollection("ib-" + year, collection => {
+      return collection.getFilteredByTags("IB", year)
     })
   }
 
   eleventyConfig.addCollection('iaCourseList', function (collection) {
     let courseSet = new Set();
     collection.getFilteredByTag("ia-questions").forEach(function (item) {
+      if ('course' in item.data) {
+        courseSet.add(item.data.course)
+      }
+    });
+
+    return [...courseSet];
+  });
+
+  eleventyConfig.addCollection('ibCourseList', function (collection) {
+    let courseSet = new Set();
+    collection.getFilteredByTag("ib-questions").forEach(function (item) {
       if ('course' in item.data) {
         courseSet.add(item.data.course)
       }

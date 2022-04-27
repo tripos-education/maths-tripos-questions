@@ -1,0 +1,6 @@
+{% for course in collections.ibCourseList %}
+  {% set courseUrl %}/courses/{{ course }}/{% endset %}
+
+  <a href="{{ courseUrl | url }}" class="post-tag">#{{ course }}</a>
+
+{% endfor %}
