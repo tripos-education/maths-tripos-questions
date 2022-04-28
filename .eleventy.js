@@ -104,10 +104,10 @@ module.exports = function (eleventyConfig) {
 
   for (const year of yearList) {
     eleventyConfig.addCollection("ia-" + year, collection => {
-      return collection.getFilteredByTags("IA", year)
+      return collection.getFilteredByTags("ia-questions", year)
     })
     eleventyConfig.addCollection("ib-" + year, collection => {
-      return collection.getFilteredByTags("IB", year)
+      return collection.getFilteredByTags("ib-questions", year)
     })
   }
 

@@ -1,24 +1,45 @@
 <ul class="post-list">
   {% for post in postslist %}
     <li class="post-list__item">
-      <div>
-        <div class="post-list__tags">
-          {% set courseUrl %}/courses/{{ post.data.course }}/{% endset %}
-          <a href="{{ courseUrl | url }}">#{{ post.data.course }}</a>
-        </div>
-      </div>
-
-      <h2 class="post-list__title">
+      <h1 class="post-list__title">
         <a  href="{{ post.url }}">{{ post.data.title | md | safe }}</a>
-      </h2>
+      </h1>
               
       <div class="post__details">
+          <div class="post-list__tags">
+            {% set courseUrl %}/courses/{{ post.data.course }}/{% endset %}
+            <a href="{{ courseUrl | url }}">#{{ post.data.course }}</a>
+          </div>
           {{ post.data.year }}
       </div>
 
-      <p class="post-list__excerpt">{{ post.templateContent | md | safe  }}
+      <main class="post__content">
+        {{ post.templateContent | safe }}
+      </main>
 
       <a class="post-list__read-more" href="{{ post.url }}">comment</a>
     </li>
   {% endfor %}
 </ul>
+
+<article class="post">
+  <header class="post__header">
+    <h1>{{ title | md | safe }}</h1>
+    <div class="post__details">
+      <div>
+        <div class="post-list__tags">
+          {% set courseUrl %}/courses/{{ course }}/{% endset %}
+          <a href="{{ courseUrl | url }}">#{{ course }}</a>
+        </div>
+      </div>
+      {{ year }}
+    </div>
+  </header>
+
+  <main class="post__content">
+    {{ content | safe }}
+  </main>
+
+  {% include "tripos-comments.html" %}
+
+</article>

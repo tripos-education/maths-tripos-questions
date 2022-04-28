@@ -6,11 +6,9 @@ layout: base.njk
   <header class="post__header">
     <h1>{{ title | md | safe }}</h1>
     <div class="post__details">
-      <div>
-        <div class="post-list__tags">
-          {% set courseUrl %}/courses/{{ course }}/{% endset %}
-          <a href="{{ courseUrl | url }}">#{{ course }}</a>
-        </div>
+      <div class="post-list__tags">
+        {% set courseUrl %}/courses/{{ course }}/{% endset %}
+        <a href="{{ courseUrl | url }}">#{{ course }}</a>
       </div>
       {{ year }}
     </div>
