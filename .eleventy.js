@@ -109,6 +109,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("ib-" + year, collection => {
       return collection.getFilteredByTags("ib-questions", year)
     })
+    eleventyConfig.addCollection("ii-" + year, collection => {
+      return collection.getFilteredByTags("ii-questions", year)
+    })
   }
 
   eleventyConfig.addCollection('iaCourseList', function (collection) {
@@ -125,6 +128,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('ibCourseList', function (collection) {
     let courseSet = new Set();
     collection.getFilteredByTag("ib-questions").forEach(function (item) {
+      if ('course' in item.data) {
+        courseSet.add(item.data.course)
+      }
+    });
+
+    return [...courseSet];
+  });
+
+  eleventyConfig.addCollection('iiCourseList', function (collection) {
+    let courseSet = new Set();
+    collection.getFilteredByTag("ii-questions").forEach(function (item) {
       if ('course' in item.data) {
         courseSet.add(item.data.course)
       }
