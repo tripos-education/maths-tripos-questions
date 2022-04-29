@@ -10,7 +10,11 @@
 
 - [ ] Add comment counts for giscus. This seems a bit harder see [this PR](https://github.com/giscus/giscus/pull/198)
 
-- [ ] Downloading images from Mathpix CDN. Missing dagger in 1.II.6B (2005)
+- [ ] Fixing images that don't need to be images because they are imperfectly converted text
+
+- [ ] Downloading images from Mathpix CDN. 
+
+- [ ] Missing dagger in 1.II.6B (2005)
 
 - [ ] Add "comment on" to each question in post list
 
