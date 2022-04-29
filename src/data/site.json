@@ -1,10 +1,10 @@
 {
   "name": "Mathematics Tripos Papers",
   "description": "An archive of questions from the Cambridge Mathematics Tripos",
-  "url": "https://eleventyduo.netlify.app",
+  "url": "https:/questions.tripos.org",
   "author": {
     "name": "Austen Lamacraft",
-    "email": "author@site.com",
+    "email": "hello@tripos.org",
     "twitterHandle": "@tripos"
   },
   "defaultSocialImage": "/images/default-social-image.png",

@@ -2,13 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Mathematics Tripos Papers</title>
   <subtitle></subtitle>
-  <link href="https://eleventyduo.netlify.app/feed.xml" rel="self"/>
-  <link href="https://eleventyduo.netlify.app/"/>
+  <link href="https:/questions.tripos.org/feed.xml" rel="self"/>
+  <link href="https:/questions.tripos.org/"/>
   
-  <id>https://eleventyduo.netlify.app</id>
+  <id>https:/questions.tripos.org</id>
   <author>
     <name>Austen Lamacraft</name>
-    <email>author@site.com</email>
+    <email>hello@tripos.org</email>
   </author>
   
 </feed>
