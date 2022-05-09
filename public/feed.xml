@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mathematics Tripos Papers</title>
+  <subtitle></subtitle>
+  <link href="https:/tripos.org/feed.xml" rel="self"/>
+  <link href="https:/tripos.org/"/>
+  
+  <id>https:/tripos.org</id>
+  <author>
+    <name>Tripos Education</name>
+    <email>hello@tripos.org</email>
+  </author>
+  
+</feed>

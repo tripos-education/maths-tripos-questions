@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href=https://tripos.org/cambridge-maths-tripos-questions/part-ii/2002-3/>
+
+    <link href="/cambridge-maths-tripos-questions/assets/main.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.js" integrity="sha384-Ep9Es0VCjVn9dFeaN2uQxgGcGmG+pfZ4eBaHxUpxXDORrrVACZVOpywyzvFRGbmv" crossorigin="anonymous"></script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F28ZJVYFS9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-F28ZJVYFS9');
+    </script>
+
+    <title>
+      A1.8 
+      
+         | Mathematics Tripos Papers
+      
+    </title>
+
+    <link rel="icon" type= “image/x-icon” href=/cambridge-maths-tripos-questions/images/favicon.ico>
+
+    <meta property="og:title" content="A1.8 ">
+    <meta property="og:site_name" content="Mathematics Tripos Papers"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https:/tripos.org/part-ii/2002-3/"/>
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+      <meta name="twitter:creator" content="@tripos"/>
+    
+
+    
+    
+      
+    
+    
+      <meta name="description" content="Part II 2002 Graph Theory: A1.8 ">
+      <meta property="og:description" content="Part II 2002 Graph Theory: A1.8 ">
+      <meta name="description" content="Part II 2002 Graph Theory: A1.8 "/>
+    
+
+    
+      
+    
+    
+      <meta property="og:image" content="https://tripos.org/cambridge-maths-tripos-questions/images/default-social-image.png"/>
+      <meta name="twitter:image" content="https://tripos.org/cambridge-maths-tripos-questions/images/default-social-image.png"/>
+    
+
+    
+      <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  </head>
+  <body>
+    <div class="layout-wrapper">
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="site-title">
+            <a href=/cambridge-maths-tripos-questions/>
+              Mathematics Tripos Papers
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/cambridge-maths-tripos-questions/part-ia"  >Part IA</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/cambridge-maths-tripos-questions/part-ib"  >Part IB</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/cambridge-maths-tripos-questions/part-ii"  >Part II</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/cambridge-maths-tripos-questions/faq"  >FAQ</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+
+      <main class="main">
+        
+<article class="post">
+  <header class="post__header">
+    <h1><p>A1.8</p>
+</h1>
+    <div class="post__details">
+      <div class="post-list__tags">
+        
+        <a href="/cambridge-maths-tripos-questions/courses/Graph Theory/">Graph Theory</a>
+      </div>
+      Part II, 2002
+    </div>
+  </header>
+
+  <main class="post__content">
+    <p>(i) State and prove a necessary and sufficient condition for a graph to be Eulerian (that is, to have an Eulerian circuit).</p>
+<p>Prove that, given any connected non-Eulerian graph <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span></span></span></span>, there is an Eulerian graph <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span></span></span></span> and a vertex <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∈</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">v \in H</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span></span></span></span> such that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mi>H</mi><mo>−</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">G=H-v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span>.</p>
+<p>(ii) Let <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span></span></span></span> be a connected plane graph with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> vertices, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">e</span></span></span></span> edges and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span> faces. Prove that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mi>e</mi><mo>+</mo><mi>f</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n-e+f=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>. Deduce that <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>≤</mo><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>g</mi><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">e \leq g(n-2) /(g-2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span> is the smallest face size.</p>
+<p>The crossing number <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">c(G)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mopen">(</span><span class="mord mathnormal">G</span><span class="mclose">)</span></span></span></span> of a non-planar graph <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span></span></span></span> is the minimum number of edgecrossings needed when drawing the graph in the plane. (The crossing of three edges at the same point is not allowed.) Show that if <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span></span></span></span> has <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> vertices and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">e</span></span></span></span> edges then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo><mo>≥</mo><mi>e</mi><mo>−</mo><mn>3</mn><mi>n</mi><mo>+</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">c(G) \geq e-3 n+6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mopen">(</span><span class="mord mathnormal">G</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span>. Find <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mrow><mo fence="true">(</mo><msub><mi>K</mi><mn>6</mn></msub><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">c\left(K_{6}\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>.</p>
+
+  </main>
+
+  
+  <script src="https://giscus-one.vercel.app/client.js"
+    data-repo="tripos-education/maths-tripos-questions"
+    data-repo-id="R_kgDOHNk5nA"
+    data-category="Question comments"
+    data-category-id="DIC_kwDOHNk5nM4CO-nf"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="en"
+    data-discussions-summary=0
+    crossorigin="anonymous"
+    async>
+</script>
+
+</article>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+            
+
+            
+
+              
+            
+          </ul>
+
+          
+            <p class="footer__attribution">
+
+            </p>
+          
+
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="/cambridge-maths-tripos-questions/assets/main.js"></script>
+  </body>
+</html>

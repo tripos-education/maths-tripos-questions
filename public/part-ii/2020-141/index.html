@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href=https://tripos.org/cambridge-maths-tripos-questions/part-ii/2020-141/>
+
+    <link href="/cambridge-maths-tripos-questions/assets/main.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.js" integrity="sha384-Ep9Es0VCjVn9dFeaN2uQxgGcGmG+pfZ4eBaHxUpxXDORrrVACZVOpywyzvFRGbmv" crossorigin="anonymous"></script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F28ZJVYFS9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-F28ZJVYFS9');
+    </script>
+
+    <title>
+      Paper 1, Section II, J 
+      
+         | Mathematics Tripos Papers
+      
+    </title>
+
+    <link rel="icon" type= “image/x-icon” href=/cambridge-maths-tripos-questions/images/favicon.ico>
+
+    <meta property="og:title" content="Paper 1, Section II, J ">
+    <meta property="og:site_name" content="Mathematics Tripos Papers"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https:/tripos.org/part-ii/2020-141/"/>
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+      <meta name="twitter:creator" content="@tripos"/>
+    
+
+    
+    
+      
+    
+    
+      <meta name="description" content="Part II 2020 Statistical Modelling: Paper 1, Section II, J ">
+      <meta property="og:description" content="Part II 2020 Statistical Modelling: Paper 1, Section II, J ">
+      <meta name="description" content="Part II 2020 Statistical Modelling: Paper 1, Section II, J "/>
+    
+
+    
+      
+    
+    
+      <meta property="og:image" content="https://tripos.org/cambridge-maths-tripos-questions/images/default-social-image.png"/>
+      <meta name="twitter:image" content="https://tripos.org/cambridge-maths-tripos-questions/images/default-social-image.png"/>
+    
+
+    
+      <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <script>mermaid.initialize({startOnLoad:true});</script>
+    
+  </head>
+  <body>
+    <div class="layout-wrapper">
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="site-title">
+            <a href=/cambridge-maths-tripos-questions/>
+              Mathematics Tripos Papers
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/cambridge-maths-tripos-questions/part-ia"  >Part IA</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/cambridge-maths-tripos-questions/part-ib"  >Part IB</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/cambridge-maths-tripos-questions/part-ii"  >Part II</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/cambridge-maths-tripos-questions/faq"  >FAQ</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+
+      <main class="main">
+        
+<article class="post">
+  <header class="post__header">
+    <h1><p>Paper 1, Section II, J</p>
+</h1>
+    <div class="post__details">
+      <div class="post-list__tags">
+        
+        <a href="/cambridge-maths-tripos-questions/courses/Statistical Modelling/">Statistical Modelling</a>
+      </div>
+      Part II, 2020
+    </div>
+  </header>
+
+  <main class="post__content">
+    <p>We consider a subset of the data on car insurance claims from Hallin and Ingenbleek (1983). For each customer, the dataset includes total payments made per policy-year, the amount of kilometres driven, the bonus from not having made previous claims, and the brand of the car. The amount of kilometres driven is a factor taking values <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">1,2,3,4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span></span></span></span>, or 5 , where a car in level <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> has driven a larger number of kilometres than a car in level <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> for any <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">i=1,2,3,4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span></span></span></span>. A statistician from an insurance company fits the following model on <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>.</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&gt;</span></span></span></span> model1 &lt;- Im(Paymentperpolicyyr as numeric(Kilometres) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo></mrow><annotation encoding="application/x-tex">+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">+</span></span></span></span> Brand <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo></mrow><annotation encoding="application/x-tex">+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">+</span></span></span></span> Bonus)</p>
+<p>(i) Why do you think the statistician transformed variable Kilometres from a factor to a numerical variable?</p>
+<p>(ii) To check the quality of the model, the statistician applies a function to model1 which returns the following figure:</p>
+<p><img src="https://cdn.mathpix.com/cropped/2022_04_28_bbf15a0aea848371efd9g-093.jpg?height=410&amp;width=480&amp;top_left_y=723&amp;top_left_x=351" alt=""></p>
+<p>What does the plot represent? Does it suggest that model1 is a good model? Explain. If not, write down a model which the plot suggests could be better.</p>
+<p>(iii) The statistician fits the model suggested by the graph and calls it model2. Consider the following abbreviated output:</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mi mathvariant="normal">summary</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">model2</mi><mo>⁡</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">&gt;\operatorname{summary}(\operatorname{model2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">s</span><span class="mord mathrm">u</span><span class="mord mathrm">m</span><span class="mord mathrm">m</span><span class="mord mathrm">a</span><span class="mord mathrm">r</span><span class="mord mathrm" style="margin-right:0.01389em;">y</span></span><span class="mopen">(</span><span class="mop"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span><span class="mord mathrm">e</span><span class="mord mathrm">l</span><span class="mord mathrm">2</span></span><span class="mclose">)</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\cdots</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.31em;vertical-align:0em;"></span><span class="minner">⋯</span></span></span></span></p>
+<p>Coefficients:</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable rowspacing="0.15999999999999992em" columnalign="left right right right right" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext> (Intercept) </mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>6.514035</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.186339</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>34.958</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>&lt;</mo><mn>2</mn><mi mathvariant="normal">e</mi><mo>−</mo><mn>16</mn><mo>∗</mo><mo>∗</mo><mo>∗</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext> as.numeric(Kilometres) </mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.057132</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.032654</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1.750</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.08126.</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mtext> Brand2 </mtext></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.363869</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.186857</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1.947</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.05248.</mn></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{lrrrr}\text { (Intercept) } &amp; 6.514035 &amp; 0.186339 &amp; 34.958 &amp; &lt;2 \mathrm{e}-16 * * * \\ \text { as.numeric(Kilometres) } &amp; 0.057132 &amp; 0.032654 &amp; 1.750 &amp; 0.08126 . \\ \text { Brand2 } &amp; 0.363869 &amp; 0.186857 &amp; 1.947 &amp; 0.05248 .\end{array}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.6000000000000005em;vertical-align:-1.5500000000000007em;"></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord"> (Intercept) </span></span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord"> as.numeric(Kilometres) </span></span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord"> Brand2 </span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">6</span><span class="mord">.</span><span class="mord">5</span><span class="mord">1</span><span class="mord">4</span><span class="mord">0</span><span class="mord">3</span><span class="mord">5</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">5</span><span class="mord">7</span><span class="mord">1</span><span class="mord">3</span><span class="mord">2</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">3</span><span class="mord">6</span><span class="mord">3</span><span class="mord">8</span><span class="mord">6</span><span class="mord">9</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span><span class="mord">8</span><span class="mord">6</span><span class="mord">3</span><span class="mord">3</span><span class="mord">9</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">3</span><span class="mord">2</span><span class="mord">6</span><span class="mord">5</span><span class="mord">4</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span><span class="mord">8</span><span class="mord">6</span><span class="mord">8</span><span class="mord">5</span><span class="mord">7</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span><span class="mord">4</span><span class="mord">.</span><span class="mord">9</span><span class="mord">5</span><span class="mord">8</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">.</span><span class="mord">7</span><span class="mord">5</span><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">.</span><span class="mord">9</span><span class="mord">4</span><span class="mord">7</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathrm">e</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">6</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">∗</span><span class="mord">∗</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">8</span><span class="mord">1</span><span class="mord">2</span><span class="mord">6</span><span class="mord">.</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">5</span><span class="mord">2</span><span class="mord">4</span><span class="mord">8</span><span class="mord">.</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></p>
+<p>Brand2</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\cdots</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.31em;vertical-align:0em;"></span><span class="minner">⋯</span></span></span></span></p>
+<p>Brand9</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable rowspacing="0.15999999999999992em" columnalign="left left left left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.125446</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.186857</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.671</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.50254</mn></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{lllll}0.125446 &amp; 0.186857 &amp; 0.671 &amp; 0.50254\end{array}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2000000000000002em;vertical-align:-0.35000000000000003em;"></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8500000000000001em;"><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span><span class="mord">2</span><span class="mord">5</span><span class="mord">4</span><span class="mord">4</span><span class="mord">6</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35000000000000003em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8500000000000001em;"><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span><span class="mord">8</span><span class="mord">6</span><span class="mord">8</span><span class="mord">5</span><span class="mord">7</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35000000000000003em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8500000000000001em;"><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">6</span><span class="mord">7</span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35000000000000003em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8500000000000001em;"><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mord">0</span><span class="mord">2</span><span class="mord">5</span><span class="mord">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.35000000000000003em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></p>
+<p>Bonus</p>
+<p><img src="https://cdn.mathpix.com/cropped/2022_04_28_bbf15a0aea848371efd9g-094.jpg?height=24&amp;width=496&amp;top_left_y=515&amp;top_left_x=450" alt=""></p>
+<p>Signif. codes: 0 '<em><strong>' <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.001</mn></mrow><annotation encoding="application/x-tex">0.001</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">1</span></span></span></span> '</strong>' <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.01</mn></mrow><annotation encoding="application/x-tex">0.01</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">1</span></span></span></span> '</em>' <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.05</mn></mrow><annotation encoding="application/x-tex">0.05</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">5</span></span></span></span> '.' <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.1</mn></mrow><annotation encoding="application/x-tex">0.1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span></span></span></span> ' 1</p>
+<p>Residual standard error: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.7817</mn></mrow><annotation encoding="application/x-tex">0.7817</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">7</span><span class="mord">8</span><span class="mord">1</span><span class="mord">7</span></span></span></span> on 284 degrees of freedom ..</p>
+<p>Using the output, write down a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>95</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">95 \%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">9</span><span class="mord">5</span><span class="mord">%</span></span></span></span> prediction interval for the ratio between the total payments per policy year for two cars of the same brand and with the same value of Bonus, one of which has a Kilometres value one higher than the other. You may express your answer as a function of quantiles of a common distribution, which you should specify.</p>
+<p>(iv) Write down a generalised linear model for Paymentperpolicyyr which may be a better model than model1 and give two reasons. You must specify the link function.</p>
+
+  </main>
+
+  
+  <script src="https://giscus-one.vercel.app/client.js"
+    data-repo="tripos-education/maths-tripos-questions"
+    data-repo-id="R_kgDOHNk5nA"
+    data-category="Question comments"
+    data-category-id="DIC_kwDOHNk5nM4CO-nf"
+    data-mapping="pathname"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="en"
+    data-discussions-summary=0
+    crossorigin="anonymous"
+    async>
+</script>
+
+</article>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+            
+
+            
+
+              
+            
+          </ul>
+
+          
+            <p class="footer__attribution">
+
+            </p>
+          
+
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="/cambridge-maths-tripos-questions/assets/main.js"></script>
+  </body>
+</html>
