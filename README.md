@@ -47,7 +47,9 @@ Build with
 
 - [ ] SEO and keywords
 
-- [ ] Titles and descriptions still not working for question lists
+- [ ] Titles and descriptions meta tags still not working for question lists
+
+- [ ] Spoiler rendering in comments
 
 ---
 
