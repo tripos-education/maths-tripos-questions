@@ -213,6 +213,6 @@ module.exports = function (eleventyConfig) {
     templateFormats: ['html', 'njk', 'md'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    pathPrefix: "/cambridge-maths-tripos-questions/"
+    // pathPrefix: "/cambridge-maths-tripos-questions/"
   };
 };
