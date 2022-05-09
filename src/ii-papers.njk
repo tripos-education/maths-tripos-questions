@@ -1,10 +1,12 @@
 --- 
-layout: base.njk 
+layout: base.njk
+title: "Part II, {{ year }}" 
 pagination:
     data: collections.yearList
     size: 1
     alias: year
-permalink: "ii/{{ year | slug }}/"
+permalink: "part-ii/{{ year | slug }}/"
+description: "Part II questions from {{ year }}"
 ---
 
 <h1>Part II {{ year }}</h1>

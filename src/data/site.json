@@ -1,9 +1,9 @@
 {
   "name": "Mathematics Tripos Papers",
-  "description": "An archive of questions from the Cambridge Mathematics Tripos",
-  "url": "https:/questions.tripos.org",
+  "description": "An archive of questions from the Mathematics Tripos, University of Cambridge",
+  "url": "https:/tripos.org",
   "author": {
-    "name": "Austen Lamacraft",
+    "name": "Tripos Education",
     "email": "hello@tripos.org",
     "twitterHandle": "@tripos"
   },
@@ -11,17 +11,22 @@
   "headerLinks": [
     {
       "text": "Part IA",
-      "url": "/ia",
+      "url": "/part-ia",
       "external": false
     },
     {
       "text": "Part IB",
-      "url": "/ib",
+      "url": "/part-ib",
       "external": false
     },
     {
       "text": "Part II",
-      "url": "/ii",
+      "url": "/part-ii",
+      "external": false
+    },
+    {
+      "text": "FAQ",
+      "url": "/faq",
       "external": false
     }
   ],

@@ -53,13 +53,13 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode('bundledcss', function () {
     return manifest['main.css']
-      ? `<link href="${manifest['main.css']}" rel="stylesheet" />`
+      ? `<link href="${eleventyConfig.getFilter('url')(manifest['main.css'])}" rel="stylesheet" />`
       : '';
   });
 
   eleventyConfig.addShortcode('bundledjs', function () {
     return manifest['main.js']
-      ? `<script src="${manifest['main.js']}"></script>`
+      ? `<script src="${eleventyConfig.getFilter('url')(manifest['main.js'])}"></script>`
       : '';
   });
 
@@ -98,25 +98,25 @@ module.exports = function (eleventyConfig) {
   const yearList = Array.from(new Array(21), (x, i) => String(i + 2001));
 
   eleventyConfig.addCollection('yearList', function (collection) {
-    // return [...new Set(collection.getFilteredByTag("ia-questions").map(post => String(post.data.year)))]
+    // return [...new Set(collection.getFilteredByTag("part-ia").map(post => String(post.data.year)))]
     return yearList
   });
 
   for (const year of yearList) {
     eleventyConfig.addCollection("ia-" + year, collection => {
-      return collection.getFilteredByTags("ia-questions", year)
+      return collection.getFilteredByTags("part-ia", year)
     })
     eleventyConfig.addCollection("ib-" + year, collection => {
-      return collection.getFilteredByTags("ib-questions", year)
+      return collection.getFilteredByTags("part-ib", year)
     })
     eleventyConfig.addCollection("ii-" + year, collection => {
-      return collection.getFilteredByTags("ii-questions", year)
+      return collection.getFilteredByTags("part-ii", year)
     })
   }
 
   eleventyConfig.addCollection('iaCourseList', function (collection) {
     let courseSet = new Set();
-    collection.getFilteredByTag("ia-questions").forEach(function (item) {
+    collection.getFilteredByTag("part-ia").forEach(function (item) {
       if ('course' in item.data) {
         courseSet.add(item.data.course)
       }
@@ -127,7 +127,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection('ibCourseList', function (collection) {
     let courseSet = new Set();
-    collection.getFilteredByTag("ib-questions").forEach(function (item) {
+    collection.getFilteredByTag("part-ib").forEach(function (item) {
       if ('course' in item.data) {
         courseSet.add(item.data.course)
       }
@@ -138,7 +138,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection('iiCourseList', function (collection) {
     let courseSet = new Set();
-    collection.getFilteredByTag("ii-questions").forEach(function (item) {
+    collection.getFilteredByTag("part-ii").forEach(function (item) {
       if ('course' in item.data) {
         courseSet.add(item.data.course)
       }
@@ -213,5 +213,6 @@ module.exports = function (eleventyConfig) {
     templateFormats: ['html', 'njk', 'md'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
+    pathPrefix: "/cambridge-maths-tripos-questions/"
   };
 };
