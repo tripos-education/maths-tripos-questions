@@ -21,6 +21,7 @@ Where's the repo
 ## Comments
 
 - Why do I need a GitHub account?
-    - Because you do
 
+
+{% set latestComments = '0' %}
 {% include "tripos-comments.njk" %}
