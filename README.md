@@ -1,14 +1,73 @@
 # Cambridge Maths Tripos Questions
 
-Built with Eleventy
+## FAQ
 
-Based on 
+---
 
-Build with 
+### General
 
-`node --max-old-space-size=6000 ./node_modules/@11ty/eleventy/cmd.js`
+#### *What is this?*
 
-# TODOs
+An archive of questions from the [Cambridge Mathematics Tripos](https://www.maths.cam.ac.uk/undergrad/pastpapers/past-ia-ib-and-ii-examination-papers) in handy blog format.
+
+#### *Is this an official University project?*
+
+No.
+
+#### *Can you add...?*
+
+Maybe! Get in touch using one of the methods below.
+
+---
+
+### Comments
+
+#### *Can I use LaTeX?*
+
+Yes! Use `$...$` for inline, and `$$...$$` for math blocks. You can even copy and paste LaTeX from the questions (though not other comments at present).
+
+#### *Is there a quicker way?*
+
+Try [Mathpix Snip](https://mathpix.com/) to convert your handwritten equations into LaTeX.
+
+#### *Why do I need a GitHub account?*
+
+The comments live on [GitHub discussions](https://github.com/tripos-education/maths-tripos-questions/discussions) and are created by a fork of the wonderful [Giscus app](https://giscus.app/).
+
+#### *Why can't I edit / delete a comment?*
+
+This is not implemented yet in Giscus, but you can click through to the comment on GitHub and edit / delete there.
+
+#### *Can I attach an image?*
+
+This isn't yet supported by the GitHub discussions API. If you add an image on GitHub, however, it will show up here.
+
+---
+
+### Technical
+
+#### *How was it made?*
+
+The original PDFs were converted to markdown / LaTeX using the [Mathpix](https://mathpix.com/) API. The blog itself is built using [Eleventy](https://www.11ty.dev/) and is based on the [Eleventy Duo](https://eleventyduo.netlify.app/) template. It's hosted on Netlify.
+
+#### *Can I contribute?*
+
+Yes! The code is [on GitHub](https://github.com/tripos-education/maths-tripos-questions). You can [join the discussion](https://github.com/tripos-education/maths-tripos-questions/discussions) on new ideas, [open an issue](https://github.com/tripos-education/maths-tripos-questions/issues), or submit a pull request.
+
+---
+
+## Getting Started
+
+
+- Install dependencies with `yarn install`
+
+- Serve the site locally with `yarn dev`
+
+- Use `yarn build` to build a production version of the site.
+
+- You may need to use `node --max-old-space-size=6000 ./node_modules/@11ty/eleventy/cmd.js` to stop Node running out of memory due to the large amount of content.
+
+## TODOs
 
 - [x] Deployment 
 
@@ -16,9 +75,11 @@ Build with
 
 - [x] Fix missing subjects
 
-- [ ] First 2011 IB question is messed up (course list wasn't removed)
+- [x] First 2011 IB question is messed up (course list wasn't removed)
 
-- [ ] Add descriptive `<title>` and `og:title` that can be used by Giscus
+- [x] Add descriptive `<title>` and `og:title` that can be used by Giscus
+
+- [ ] Social media card for each question for posting on Twitter, Discord, etc.
 
 - [ ] Update "powered by giscus" and add KaTeX message
 
@@ -32,15 +93,6 @@ Build with
 
 - [x] Add "comment on" to each question in post list
 
-- [ ] FAQ
-  - Writing guide
-  - Contact
-  - Comment system "Why do I need a GH account"
-  - I can't edit!
-  - 
-
-
-
 - [x] Add Google analytics
 
 - [x] Add tripos domain
@@ -51,10 +103,3 @@ Build with
 
 - [ ] Spoiler rendering in comments
 
----
-
-# Notes
-
-NODE_OPTIONS = "--max_old_space_size=4096" or 6000?
-
----
