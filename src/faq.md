@@ -29,11 +29,31 @@ Maybe! Let us know by commenting below.
 
 #### *Can I use $\LaTeX$?*
 
-Yes! Use `$...$` for inline, and `$$...$$` for math blocks.
+Yes! Use `$...$` for inline, and `$$...$$` for math blocks. You can even copy and paste $\LaTeX$ from the questions (though not other comments at present).
 
 #### *Is there a quicker way?*
 
 Try [Mathpix Snip](https://mathpix.com/) to convert your handwritten equations into $\LaTeX$.
+
+#### *Can I hide spoilers?*
+
+
+<details>
+<summary>Yes, you do it like this:</summary>
+  
+  ```markdown
+  <details>
+  <summary>Spoiler warning</summary>
+  
+  Hidden text goes here.
+  
+</details>
+```
+
+Note that you have to leave a blank line after `</summary>`. 
+  
+</details>
+
 
 #### *Why do I need a GitHub account?*
 
