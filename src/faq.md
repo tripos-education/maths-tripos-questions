@@ -29,7 +29,7 @@ Maybe! Let us know by commenting below.
 
 #### *Can I use $\LaTeX$?*
 
-Yes! Use `$...$` for inline, and `$$...$$` for math blocks. You can even copy and paste $\LaTeX$ from the questions (though not other comments at present).
+Yes! Use `$...$` for inline, and `$$...$$` for math blocks. You can even copy and paste $\LaTeX$ from the questions and other comments.
 
 #### *Is there a quicker way?*
 
