@@ -61,7 +61,7 @@ The comments live on [GitHub discussions](https://github.com/tripos-education/ma
 
 #### *Why can't I edit / delete a comment?*
 
-This is not implemented yet in Giscus, but you can click through to the comment on GitHub and edit / delete there.
+This is not implemented yet in Giscus, but clicking the comment's timestamp (e.g. "2 hours ago") will take you to the comment's page on GitHub discussions, where you can edit / delete comments. (On GitHub, click the <kbd>...</kbd> in the top right-hand corner of the comment to see these options).
 
 #### *Can I attach an image?*
 
