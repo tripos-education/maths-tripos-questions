@@ -18,7 +18,7 @@ layout: base.njk
     {{ content | safe }}
   </main>
   
-  {% set editUrl %}https://github.com/tripos-education/maths-tripos-questions/blob/master/src/part-{{ course_year | lower }}/{{ year }}-{{ question_number }}/{% endset %}
+  {% set editUrl %}https://github.com/tripos-education/maths-tripos-questions/blob/master/src/part-{{ course_year | lower }}/{{ year }}-{{ question_number }}.md{% endset %}
   <div><i>Typos? Please <a href="{{ editUrl | url }}">submit corrections to this page on GitHub.</a></i></div>
 
   {% set latestComments = '0' %}
