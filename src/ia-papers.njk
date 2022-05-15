@@ -1,12 +1,13 @@
 --- 
 layout: base.njk
-title: "Part IA, {{ year }}" 
 pagination:
     data: collections.yearList
     size: 1
     alias: year
 permalink: "part-ia/{{ year | slug }}/"
-description: "Part IA questions from {{ year }}"
+eleventyComputed:
+  title: "Part IA, {{ year }}"
+  description: "Part IA questions from {{ year }}"
 ---
 
 <h1>Part IA {{ year }}</h1>
