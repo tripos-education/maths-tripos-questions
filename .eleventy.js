@@ -122,7 +122,7 @@ module.exports = function (eleventyConfig) {
       }
     });
 
-    return [...courseSet];
+    return [...courseSet].sort();
   });
 
   eleventyConfig.addCollection('ibCourseList', function (collection) {
@@ -133,7 +133,7 @@ module.exports = function (eleventyConfig) {
       }
     });
 
-    return [...courseSet];
+    return [...courseSet].sort();
   });
 
   eleventyConfig.addCollection('iiCourseList', function (collection) {
@@ -144,7 +144,7 @@ module.exports = function (eleventyConfig) {
       }
     });
 
-    return [...courseSet];
+    return [...courseSet].sort();
   });
 
   eleventyConfig.addCollection('tagList', function (collection) {

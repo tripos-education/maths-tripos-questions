@@ -2,21 +2,24 @@
   {% for post in postslist %}
     <li class="post-list__item">
       <h1 class="post-list__title">
-        <a  href="{{ post.url | url }}">{{ post.data.title | md | safe }}</a>
+        <a  href="{{ post.url | url }}" target="_blank">{{ post.data.title | md | safe }}</a>
       </h1>
       <div class="post__details">
           <div class="post-list__tags">
             {% set courseUrl %}/courses/{{ post.data.course }}/{% endset %}
-            <a href="{{ courseUrl | url }}">{{ post.data.course }}</a>
+            <a href="{{ courseUrl | url }}" target="_blank">{{ post.data.course }}</a>
+            <span>|</span>
+            {% set yearUrl %}/part-{{ post.data.course_year | lower }}//{{ post.data.year }}/{% endset %}
+            <a href="{{ yearUrl | url }}" target="_blank">Part {{ post.data.course_year }}, {{ post.data.year }}</a>
           </div>
-          Part {{ post.data.course_year }}, {{ post.data.year }}
       </div>
 
       <main class="post__content">
+    
         {{ post.templateContent | safe }}
       </main>
 
-      <a class="post-list__read-more" href="{{ post.url | url }}">comment</a>
+      <a class="post-list__read-more" href="{{ post.url | url }}" target="_blank">comment</a>
     </li>
   {% endfor %}
 </ul>
@@ -28,10 +31,12 @@
       <div>
         <div class="post-list__tags">
           {% set courseUrl %}/courses/{{ course }}/{% endset %}
-          <a href="{{ courseUrl | url }}">{{ course }}</a>
+          <a href="{{ courseUrl | url }}" target="_blank">{{ course }}</a>
+          <span>|</span>
+          {% set yearUrl %}/part-{{ course_year | lower }}//{{ year }}/{% endset %}
+          <a href="{{ yearUrl | url }}" target="_blank">{{ year }}</a>
         </div>
       </div>
-      {{ year }}
     </div>
   </header>
 
