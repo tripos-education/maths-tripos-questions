@@ -9,6 +9,7 @@ layout: base.njk
       <div class="post-list__tags">
         {% set courseUrl %}/courses/{{ course }}/{% endset %}
         <a href="{{ courseUrl | url }}" target="_blank">{{ course }}</a>
+	<span>|</span>
      {% set yearUrl %}/part-{{ course_year | lower }}/{{ year }}/{% endset %}
       <a href="{{ yearUrl | url}}" target="_blank">Part {{ course_year }}, {{ year }}</a>
       </div>
