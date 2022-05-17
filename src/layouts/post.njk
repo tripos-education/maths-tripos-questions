@@ -8,18 +8,20 @@ layout: base.njk
     <div class="post__details">
       <div class="post-list__tags">
         {% set courseUrl %}/courses/{{ course }}/{% endset %}
-        <a href="{{ courseUrl | url }}">{{ course }}</a>
+        <a href="{{ courseUrl | url }}" target="_blank">{{ course }}</a>
+	<span>|</span>
+     {% set yearUrl %}/part-{{ course_year | lower }}/{{ year }}/{% endset %}
+      <a href="{{ yearUrl | url}}" target="_blank">Part {{ course_year }}, {{ year }}</a>
       </div>
-      Part {{ course_year }}, {{ year }}
     </div>
   </header>
 
   <main class="post__content">
-    {{ content | safe }}
+    {{ content | safe }} 
   </main>
   
   {% set editUrl %}https://github.com/tripos-education/maths-tripos-questions/blob/master/src/part-{{ course_year | lower }}/{{ year }}-{{ question_number }}.md{% endset %}
-  <div><i>Typos? Please <a href="{{ editUrl | url }}">submit corrections to this page on GitHub.</a></i></div>
+  <div><i>Typos? Please <a href="{{ editUrl | url }}" target="_blank">submit corrections to this page on GitHub.</a></i></div>
 
   {% set latestComments = '0' %}
   {% include "tripos-comments.njk" %}
