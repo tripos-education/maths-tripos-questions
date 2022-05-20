@@ -11,7 +11,7 @@ For self-consistency, the course names of the following questions have been alte
 - 2017 Part II 'Topics In Analysis' -> 'Topics in Analysis'
 - 2017, 2018 Part II 'Coding & Cryptography' -> 'Coding and Cryptography'
 
-When new questions are added to this site, be weary of the possibility of such variations in course names. (Especially for Part II Fluids).
+When new questions are added to this site, be wary of the possibility of such variations in course names. (Especially for Part II Fluids).
 
 ### Anomalies regarding the 2004 Tripos reform
 
