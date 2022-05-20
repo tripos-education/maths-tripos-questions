@@ -1,5 +1,24 @@
 # Cambridge Maths Tripos Questions
 
+## Errata
+
+### Altered course names
+
+For self-consistency, the course names of the following questions have been altered from how they appear in their original exam papers:
+
+- 2009 Part IB 'Mathematical Methods' questions -> IB 'Methods'
+- 2019, 2021 Part II 'Fluids' -> 'Fluids II'
+- 2017 Part II 'Topics In Analysis' -> 'Topics in Analysis'
+- 2017, 2018 Part II 'Coding & Cryptography' -> 'Coding and Cryptography'
+
+When new questions are added to this site, be wary of the possibility of such variations in course names. (Especially for Part II Fluids).
+
+### Anomalies regarding the 2004 Tripos reform
+
+The current Part IB courses 'Markov Chains' and 'Electromagnetism' were Part II courses prior to 2005.
+
+---
+
 ## FAQ
 
 ---
@@ -85,6 +104,8 @@ Yes! The code is [on GitHub](https://github.com/tripos-education/maths-tripos-qu
 
 - You may need to use `node --max-old-space-size=6000 ./node_modules/@11ty/eleventy/cmd.js` to stop Node running out of memory due to the large amount of content.
 
+- If you only wish to test a part of the site, it is advisable to remove unneeded question files from your local clone of this repository.
+
 ## TODOs
 
 - [x] Deployment 
@@ -107,7 +128,7 @@ Yes! The code is [on GitHub](https://github.com/tripos-education/maths-tripos-qu
 
 - [ ] Downloading images from Mathpix CDN. 
 
-- [ ] Missing dagger in 1.II.6B (2005)
+- [X] Missing dagger in 1.II.6B (2005)
 
 - [x] Add "comment on" to each question in post list
 
@@ -119,5 +140,5 @@ Yes! The code is [on GitHub](https://github.com/tripos-education/maths-tripos-qu
 
 - [ ] Titles and descriptions meta tags still not working for question lists
 
-- [ ] Spoiler rendering in comments
+- [X] Spoiler rendering in comments
 
