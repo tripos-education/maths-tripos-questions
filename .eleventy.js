@@ -127,8 +127,8 @@ module.exports = function (eleventyConfig) {
     // collection of current courses for this part
     let currentSet = new Set();
     eleventyConfig.addCollection(triposPart+'Current', function (collection) {
-      collection.getFilteredByTag("part-"+triposPart, currentYear).forEach(function (item) {
-        if ('course' in item.data) {
+      collection.getFilteredByTag("part-"+triposPart,currentYear).forEach(function (item) {
+        if ('course' in item.data && item.data.year == currentYear) {
           currentSet.add(item.data.course)
         }
       });
@@ -136,13 +136,8 @@ module.exports = function (eleventyConfig) {
     });
     
     // collection of discontinued courses for this part
-    let discontinuedSet = new Set();
-    for (const course of courseSet) {
-      if (!currentSet.has(course)) {
-        discontinuedSet.add(course);
-      }
-    }
     eleventyConfig.addCollection(triposPart+'Old', function (collection) {
+      let discontinuedSet = new Set([...courseSet].filter(x => !currentSet.has(x)));
       return [...discontinuedSet].sort();
     });    
   }
