@@ -7,13 +7,15 @@ description: "Part IB questions"
 
 <h1>Part IB</h1>
 
-<div class="tags">
-  {% include "ib-course-list.njk" %}
-</div>
-
+<h3>By Year</h3>
 <div class="tags">
   {% set courseYear = 'part-ib' %}
   {% include "year-list.njk" %}
+</div>
+
+<h3>By Course</h3>
+<div class="tags">
+  {% include "ib-course-list.njk" %}
 </div>
 
 {% set latestComments = '0' %}
