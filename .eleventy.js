@@ -109,8 +109,8 @@ module.exports = function (eleventyConfig) {
     // questions by year + part
     for (const year of yearList) {
       eleventyConfig.addCollection(triposPart + "-" + year, collection => {
-        return collection.getFilteredByTags("part-"+triposPart, year)
-      }     
+        return collection.getFilteredByTags("part-"+triposPart, year);
+      });
     }
     
     // collection of all courses for this part
