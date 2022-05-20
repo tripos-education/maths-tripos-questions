@@ -1,4 +1,12 @@
-{% for course in collections.iiCourseList %}
+<h4>Current</h4>
+{% for course in collections.iiCurrent %}
+  {% set courseUrl %}/courses/{{ course }}/{% endset %}
+
+  <a href="{{ courseUrl | url }}" class="post-tag">{{ course }}</a>
+
+{% endfor %}
+<h4>Discontinued</h4>
+{% for course in collections.iiOld %}
   {% set courseUrl %}/courses/{{ course }}/{% endset %}
 
   <a href="{{ courseUrl | url }}" class="post-tag">{{ course }}</a>

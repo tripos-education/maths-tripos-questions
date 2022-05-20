@@ -95,58 +95,53 @@ module.exports = function (eleventyConfig) {
     return array.slice(0, n);
   });
 
-  const yearList = Array.from(new Array(21), (x, i) => String(i + 2001));
+  const earliestYear = 2001;
+  const currentYear = 2021; // easily visible to update each year; could obtain by searching posts instead?
+  const yearList = Array.from(new Array(1+currentYear-earliestYear), (x, i) => String(i + earliestYear));
+  const triposPartList = ["ia","ib","ii"];
 
   eleventyConfig.addCollection('yearList', function (collection) {
     // return [...new Set(collection.getFilteredByTag("part-ia").map(post => String(post.data.year)))]
     return yearList
   });
-
-  for (const year of yearList) {
-    eleventyConfig.addCollection("ia-" + year, collection => {
-      return collection.getFilteredByTags("part-ia", year)
-    })
-    eleventyConfig.addCollection("ib-" + year, collection => {
-      return collection.getFilteredByTags("part-ib", year)
-    })
-    eleventyConfig.addCollection("ii-" + year, collection => {
-      return collection.getFilteredByTags("part-ii", year)
-    })
+  
+  for (const triposPart of triposPartList) {
+    // questions by year + part
+    for (const year of yearList) {
+      eleventyConfig.addCollection(triposPart + "-" + year, collection => {
+        return collection.getFilteredByTags("part-"+triposPart, year);
+      });
+    }
+    
+    // collection of all courses for this part
+    let courseSet = new Set();
+    eleventyConfig.addCollection(triposPart+'CourseList', function (collection) {
+      collection.getFilteredByTag("part-"+triposPart).forEach(function (item) {
+        if ('course' in item.data) {
+          courseSet.add(item.data.course)
+        }
+      });
+      return [...courseSet].sort();
+    });
+    
+    // collection of current courses for this part
+    let currentSet = new Set();
+    eleventyConfig.addCollection(triposPart+'Current', function (collection) {
+      collection.getFilteredByTag("part-"+triposPart,currentYear).forEach(function (item) {
+        if ('course' in item.data && item.data.year == currentYear) {
+          currentSet.add(item.data.course)
+        }
+      });
+      return [...currentSet].sort();
+    });
+    
+    // collection of discontinued courses for this part
+    eleventyConfig.addCollection(triposPart+'Old', function (collection) {
+      let discontinuedSet = new Set([...courseSet].filter(x => !currentSet.has(x)));
+      return [...discontinuedSet].sort();
+    });    
   }
-
-  eleventyConfig.addCollection('iaCourseList', function (collection) {
-    let courseSet = new Set();
-    collection.getFilteredByTag("part-ia").forEach(function (item) {
-      if ('course' in item.data) {
-        courseSet.add(item.data.course)
-      }
-    });
-
-    return [...courseSet].sort();
-  });
-
-  eleventyConfig.addCollection('ibCourseList', function (collection) {
-    let courseSet = new Set();
-    collection.getFilteredByTag("part-ib").forEach(function (item) {
-      if ('course' in item.data) {
-        courseSet.add(item.data.course)
-      }
-    });
-
-    return [...courseSet].sort();
-  });
-
-  eleventyConfig.addCollection('iiCourseList', function (collection) {
-    let courseSet = new Set();
-    collection.getFilteredByTag("part-ii").forEach(function (item) {
-      if ('course' in item.data) {
-        courseSet.add(item.data.course)
-      }
-    });
-
-    return [...courseSet].sort();
-  });
-
+  
   eleventyConfig.addCollection('tagList', function (collection) {
     let tagSet = new Set();
     collection.getAll().forEach(function (item) {

@@ -7,14 +7,18 @@ description: "Part IA questions"
 
 <h1>Part IA</h1>
 
-<div class="tags">
-  {% include "ia-course-list.njk" %}
-</div>
-
+<h3>By Year</h3>
 <div class="tags">
   {% set courseYear = 'part-ia' %}
   {% include "year-list.njk" %}
 </div>
+
+<h3>By Course</h3>
+<div class="tags">
+  {% include "ia-course-list.njk" %}
+</div>
+
+
 
 {% set latestComments = '0' %}
 {% include "tripos-comments.njk" %}
