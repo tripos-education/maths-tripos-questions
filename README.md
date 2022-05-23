@@ -107,7 +107,7 @@ Yes! The code is [on GitHub](https://github.com/tripos-education/maths-tripos-qu
 
 - [ ] Downloading images from Mathpix CDN. 
 
-- [ ] Missing dagger in 1.II.6B (2005)
+- [x] Missing dagger in 1.II.6B (2005)
 
 - [x] Add "comment on" to each question in post list
 
