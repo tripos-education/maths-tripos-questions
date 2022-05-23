@@ -34,7 +34,7 @@
 
     <link rel="icon" type= “image/x-icon” href={{ "/images/favicon.ico" | url }}>
 
-    <meta property="og:title" content="{{  title or site.name | escape }}">
+    <meta property="og:title" content="{{ permalink or title or site.name | escape }}">
     <meta property="og:site_name" content="{{ site.name }}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ site.url + page.url }}"/>
