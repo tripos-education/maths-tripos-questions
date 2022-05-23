@@ -7,6 +7,7 @@
  --light-title: rgb(6 6 6);
  --light-border: rgba(230, 230, 230, 1);
  --light-hr : color-mod(var(--color) a(10%));
+ --light-filter: none;
  
  --dark-accent:#ff8b26;
  --dark-background:#000001;
@@ -15,6 +16,7 @@
  --dark-title: #f9f9f9;
  --dark-border: rgba(25, 25, 25, 1);
  --dark-hr : color-mod(var(--color) a(50%));
+ --dark-filter: invert(100%);
 }
 
 
@@ -27,6 +29,7 @@
  --title: var(--light-title);
  --border: var(--light-border);
  --hr: var(--light-hr);
+ --filter: var(--light-filter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,6 +41,7 @@
  --title: var(--dark-title);
  --border: var(--dark-border);
  --hr: var(--dark-hr);
+ --filter: var(--dark-filter);
 }
 }
 
@@ -49,6 +53,7 @@
  --title: var(--light-title);
  --post-border: var(--light-border);
  --hr: var(--light-hr);
+ --filter: var(--light-filter);
 }
 :root[data-theme="dark"] {
  --accent: var(--dark-accent);
@@ -58,4 +63,13 @@
  --title: var(--dark-title);
  --post-border: var(--dark-border);
  --hr: var(--dark-hr);
+ --filter: var(--dark-filter);
+}
+
+img {
+	filter: var(--filter);
+}
+
+img.nofilter {
+	filter: none;
 }
