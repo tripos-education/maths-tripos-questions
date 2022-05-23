@@ -16,7 +16,7 @@
   max-width: 48.75rem;
   padding: 1rem;
   margin-top: 1rem;
-  border-bottom: 1px solid rgba(230, 230, 230, 1);
+  border-bottom: 1px solid var(--border);
 }
 
 .site-title {
@@ -26,12 +26,12 @@
 }
 
 .site-title a {
-  color: rgb(6 6 6);
+  color: var(--title);
   text-decoration: none;
 }
 
 .site-title a:hover {
-  color: rgb(41, 41, 41);
+  color: var(--color);
 }
 
 .nav__list {
@@ -44,7 +44,7 @@
 }
 
 .nav__list a {
-  color: rgb(117, 117, 117);
+  color: var(--link);
   text-decoration: none;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -59,5 +59,5 @@
 }
 
 .nav__list a:hover {
-  color: rgb(41, 41, 41);
+  color: var(--color);
 }

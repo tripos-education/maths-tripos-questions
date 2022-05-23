@@ -61,7 +61,7 @@ img {
 hr {
   width: 100%;
   border: none;
-  background: color-mod(var(--color) a(10%));
+  background: var(--hr);
   height: 1px;
   margin-top: 2rem;
 }
