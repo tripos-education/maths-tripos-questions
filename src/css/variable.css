@@ -17,6 +17,8 @@
  --dark-border: rgba(25, 25, 25, 1);
  --dark-hr : color-mod(var(--color) a(50%));
  --dark-filter: invert(100%);
+ 
+ --default-display: initial;
 }
 
 
@@ -30,6 +32,9 @@
  --border: var(--light-border);
  --hr: var(--light-hr);
  --filter: var(--light-filter);
+ 
+ --dark-disp: none;
+ --light-disp: --default-display;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,7 +47,11 @@
  --border: var(--dark-border);
  --hr: var(--dark-hr);
  --filter: var(--dark-filter);
+ 
+ --light-disp: none;
+ --dark-disp: --default-display;
 }
+
 }
 
 :root[data-theme="light"] {
@@ -54,6 +63,9 @@
  --post-border: var(--light-border);
  --hr: var(--light-hr);
  --filter: var(--light-filter);
+ 
+ --dark-disp: none;
+ --light-disp: --default-display;
 }
 :root[data-theme="dark"] {
  --accent: var(--dark-accent);
@@ -64,6 +76,10 @@
  --post-border: var(--dark-border);
  --hr: var(--dark-hr);
  --filter: var(--dark-filter);
+ 
+ --light-disp: none;
+ --dark-disp: --default-display;
+
 }
 
 img {
@@ -72,4 +88,12 @@ img {
 
 img.nofilter {
 	filter: none;
+}
+
+
+.dark-only {
+	display: var(--dark-disp);
+}
+.light-only {
+	display: var(--light-disp);
 }
