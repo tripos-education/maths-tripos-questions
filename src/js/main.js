@@ -2,8 +2,6 @@
 
 const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-//const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-
 darkModeQuery.addListener(function (query) {
 	var theme = query.matches ? "dark" : "light";
 	setTheme(theme);
@@ -13,12 +11,6 @@ window.setTheme = function (theme) {
 	document.documentElement.setAttribute("data-theme", theme);
 	sendMessage ({ setConfig: {theme: theme} });
 	localStorage.setItem("theme",theme);
-	
-	/*if (theme == "dark") {
-		toggleSwitch.checked = true;
-	} else {
-		toggleSwitch.checked = false;
-	}*/
 };
 
 // additional script to align the giscus theme to the page theme
@@ -34,7 +26,6 @@ function setThemeInitial () {
 		setTheme(initialTheme);
 	} else {
 		if (darkModeQuery.matches) {
-			//toggleSwitch.checked = true;
 			initialTheme = "dark";
 		} else {
 			initialTheme = "light";
