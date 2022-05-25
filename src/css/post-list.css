@@ -11,7 +11,7 @@
 
 .tags a {
   text-decoration: none;
-  color: rgb(117, 117, 117);
+  color: var(--link);
 }
 
 .post-list__wrapper {
@@ -32,11 +32,11 @@
   flex-direction: column;
   padding-bottom: 3rem;
   padding-top: 3rem;
-  border-top: 1px solid rgba(230, 230, 230, 1);
+  border-top: 1px solid var(--border);
 }
 
 .post-list__item:last-child {
-  border-bottom: 1px solid rgba(230, 230, 230, 1);
+  border-bottom: 1px solid var(--border);
 }
 
 .post-list__title {
@@ -47,7 +47,7 @@
 .post-list__title a {
   font-weight: normal;
   text-decoration: none;
-  color: rgb(41, 41, 41);
+  color: var(--color);
 }
 
 .post-list__title a:hover {
@@ -58,7 +58,7 @@
 .post-list__meta {
   font-size: var(--text-sm);
   margin-top: 1rem;
-  color: rgb(117, 117, 117);
+  color: var(--link);
 }
 
 .post-list__meta > * + * {
@@ -73,7 +73,7 @@
 
 .post-list__tags a {
   text-decoration: none;
-  color: rgb(117, 117, 117);
+  color: var(--link);
 }
 
 .post-list__tags a:hover {

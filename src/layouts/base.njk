@@ -72,12 +72,15 @@
 
       <header class="header">
         <div class="header__content">
+        
           <h1 class="site-title">
             <a href={{ "/" | url }}>
               {{site.name}}
             </a>
           </h1>
-
+			
+			
+       
           {% if site.headerLinks %}
             <nav class="nav">
               <ul class="nav__list">
@@ -97,11 +100,18 @@
                     <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }}>{{ item.text }}</a>
                   </li>
                 {% endfor %}
+                	
+                	<li class="nav-item">
+                		<div class="switcher">
+                			<a title="Switch to Dark Theme" class="light-only" href="javascript:setTheme('dark')"><img  class="light-only icon" src="/images/new-moon.png" /></a>
+                			<a title="Switch to Light Theme" class="dark-only" href="javascript:setTheme('light')"><img class="dark-only icon" src="/images/sun.png" /></a>
+        				</div>
+        			</li>
               </ul>
             </nav>
 
           {% endif %}
-
+			
         </div>
       </header>
 
@@ -111,7 +121,7 @@
 
       <footer class="footer">
         <div class="footer__content">
-
+        
           <ul class="hero__social-links">
             {% if site.socialLinks %}
               {% for item in site.socialLinks %}

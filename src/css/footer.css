@@ -15,7 +15,7 @@
   max-width: 48.75rem;
   width: 100%;
   font-size: var(--text-base);
-  border-top: 1px solid rgba(230, 230, 230, 1);
+  border-top: 1px solid var(--border);
 }
 
 .footer__content > * {
