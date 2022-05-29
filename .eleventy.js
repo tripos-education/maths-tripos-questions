@@ -101,6 +101,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('triposPartList', function (collection) {
     return triposPartList;
   });
+  
+  // "" denotes "all papers"
+  const paperNos = ["",1,2,3,4];
 
   // save all the data we need to sort courses as an  object in a collection
   // need to do this because there isn't any way to reliably cross-communicate between the
@@ -172,23 +175,31 @@ module.exports = function (eleventyConfig) {
   	
   	// sort into tripos part + year pages
   	for (const triposPart of triposPartList) {
-  	for (const year of sortingData.years) {
-  			let questionList = {};
+  		for (const year of sortingData.years) {
+  			// initialise questionLists to be { "":{}, 1: {}, 2: {}, 3:{}, 4:{} }
+  			let questionLists = Object.fromEntries ( paperNos.map( no => [no, {}]) );
+  			
   			for (const course of sortingData[triposPart].allCourses) {
-  				let qns = new Set();
-  				collection.getFilteredByTags(course, year, triposPart.toUpperCase()).forEach( (item) => {
-  					qns.add(item);
-  				});
-  				questionList[course] = [...qns].sort(function(a,b) {
-  					if (a.data.title.toLowerCase() > b.data.title.toLowerCase()) {
-  						return 1;
-  					} else {
-  						return -1;
-  					}
-  				});
+  				let qgroup = collection.getFilteredByTags(course, year, triposPart.toUpperCase());
+  				for (const paper_no of paperNos) {
+  					
+  					questionLists[paper_no][course] = new Set();
+  					qgroup.forEach( (item) => {
+  						if ( paper_no == "" || item.data.title.includes( "Paper "+paper_no ) || item.data.title.includes( paper_no + ".") ) {
+  							questionLists[paper_no][course].add(item);
+  						}
+  					});
+  					questionLists[paper_no][course] = [ ...questionLists[paper_no][course] ].sort(function(a,b) {
+  						if (a.data.title.toLowerCase() > b.data.title.toLowerCase()) {
+  							return 1;
+  						} else {
+  							return -1;
+  						}
+  					});
+  				}
   			}
-  			sortingData[triposPart][year] = questionList;
-  	}
+  			sortingData[triposPart][year] = questionLists;
+  		}
   	}
   	return sortingData;
   });
@@ -211,22 +222,24 @@ module.exports = function (eleventyConfig) {
   
   // create part+year collection for purposes of pagination
   // again this is inefficient but required for the above-mentioned reasons
-  eleventyConfig.addCollection ('partsAndYears', function (collection)  {
-  	let partsAndYears = [];
+  eleventyConfig.addCollection ('papers', function (collection)  {
+  	let papers = [];
   	for (const triposPart of triposPartList) {
   		let partYears = new Set();
-  		for (const item of collection.getFilteredByTag(triposPart.toUpperCase())) {
+  		for (const item of collection.getFilteredByTag(triposPart.toUpperCase()) ) {
   			if ("year" in item.data) {
   				partYears.add(item.data.year);
   			}
   		}
   		
   		for (const y of partYears) {
-  			partsAndYears.push({"part": triposPart, "year": String(y)});
+  			for (const p of paperNos) {
+  				papers.push({"part": triposPart, "year": String(y), paper_no : p});
+  			}
   		}
   	}
   	
-  	return partsAndYears;	
+  	return papers;	
   });
   
   eleventyConfig.addCollection('tagList', function (collection) {

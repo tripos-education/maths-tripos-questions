@@ -1,22 +1,22 @@
 --- 
 layout: base.njk
 pagination:
-    data: collections.partsAndYears
+    data: collections.papers
     size: 1
     alias: paper
-permalink: "part-{{ paper.part | lower }}/{{ paper.year | slug}}/"
+permalink: "part-{{ paper.part | lower }}/{{ paper.year }}/{{ paper.paper_no }}/"
 eleventyComputed:
-  title: "Part {{ paper.part | upper }}, {{ paper.year }}"
-  description: "Part {{ paper.part | upper }} questions from {{ paper.year }}"
+  title: "Part {{ paper.part | upper }}, {{ paper.year }}{{ (', Paper ' + paper.paper_no) if paper.paper_no != '' }}"
+  description: "Part {{ paper.part | upper }} questions from {{ paper.year }} {{ ('Paper ' + paper.paper_no) if paper.paper_no != '' }}"
 ---
 
-<h1>Part {{ paper.part | upper }} {{ paper.year }}</h1>
+<h1>{{ title }}</h1>
 
 <hr />
 
 {% set group_type = "course" %}
 
-{% set postslist = collections.sortingData[paper.part][paper.year] %}
+{% set postslist = collections.sortingData[paper.part][paper.year][paper.paper_no] %}
 {% set groupslist = collections.sortingData[paper.part].allCourses %}
 {% include "posts-list.njk" %}
 
