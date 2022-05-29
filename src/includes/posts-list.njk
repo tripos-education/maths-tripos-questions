@@ -1,11 +1,16 @@
-<h3>Jump to {{ group_type }}</h3>
+<div>
 
-<div class="tags">
+{{ rightFloat | safe}}
+
+<div class="tags" style="float:left">
+<h3>Jump to {{ group_type }}</h3>
 {% for group in groupslist %}
 	{% if postslist[group].length > 0 %}
 		<a href="#{{ group | url }}" class="post-tag">{{ group }}</a>
 	{% endif %}
 {% endfor %}
+</div>
+
 </div>
 
 <hr />

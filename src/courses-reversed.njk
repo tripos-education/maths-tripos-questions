@@ -12,21 +12,21 @@ pagination:
     - tagList
   addAllPagesToCollections: true
 layout: base.njk
-permalink: /courses/{{ course }}/
+permalink: /courses/{{ course }}/reversed/
 eleventyComputed:
   title: "{{ course | title }}"
-  description: "All posts tagged “{{ course }}”"
+  description: "All posts tagged “{{ course }} (reverse order)”"
 ---
 <h1>{{ course | title }}</h1>
 
 <hr />
 
 {%set rightFloat %}
-<div style="float:right"><a href="reversed/">[Reverse year order]</a></div>
+<div style="float:right"><a href="../">[Reverse year order]</a></div>
 {% endset %}
 
 {% set group_type = "year" %}
 
 {% set postslist = collections.sortingData[course] %}
-{% set groupslist = collections.sortingData.years | reverse %}
+{% set groupslist = collections.sortingData.years %}
 {% include "posts-list.njk" %}

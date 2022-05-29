@@ -135,14 +135,14 @@ module.exports = function (eleventyConfig) {
   		let oldCourses = new Set();
   		for (const course of sortingData[triposPart].allCourses) {
   			courses.add(course);
-  			if (collection.getFilteredByTags(course, currentYear).length > 0) {
+  			if (collection.getFilteredByTags(course, currentYear, triposPart.toUpperCase()).length > 0) {
   				currentCourses.add(course);
   			} else {
   				oldCourses.add(course);
   			}
   			
   		}
-  		sortingData[triposPart].currentCourses = [...currentCourses].sort();
+  		sortingData[triposPart].currentCourses = [...currentCourses];
   		sortingData[triposPart].oldCourses = [...oldCourses].sort();
   	}
   	
