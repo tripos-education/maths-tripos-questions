@@ -95,12 +95,13 @@ module.exports = function (eleventyConfig) {
     return array.slice(0, n);
   });
   
+  
+  
   const triposPartList = ["ia","ib","ii"];
   eleventyConfig.addCollection('triposPartList', function (collection) {
     return triposPartList;
   });
 
-  
   // save all the data we need to sort courses as an  object in a collection
   // need to do this because there isn't any way to reliably cross-communicate between the
   // addCollection callback functions.
@@ -175,7 +176,7 @@ module.exports = function (eleventyConfig) {
   			let questionList = {};
   			for (const course of sortingData[triposPart].allCourses) {
   				let qns = new Set();
-  				collection.getFilteredByTags(course, year).forEach( (item) => {
+  				collection.getFilteredByTags(course, year, triposPart.toUpperCase()).forEach( (item) => {
   					qns.add(item);
   				});
   				questionList[course] = [...qns].sort(function(a,b) {
