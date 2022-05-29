@@ -1,4 +1,4 @@
-{% for year in collections.yearList %}
+{% for year in collections.sortingData.years %}
   {% set yearUrl %}/{{ courseYear }}/{{ year }}/{% endset %}
 
   <a href="{{ yearUrl | url }}" class="post-tag">{{ year }}</a>

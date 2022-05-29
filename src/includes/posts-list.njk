@@ -1,5 +1,21 @@
+<h3>Jump to {{ group_type }}</h3>
+
+<div class="tags">
+{% for group in groupslist %}
+	{% if postslist[group].length > 0 %}
+		<a href="#{{ group | url }}" class="post-tag">{{ group }}</a>
+	{% endif %}
+{% endfor %}
+</div>
+
+<hr />
+
 <ul class="post-list">
-  {% for post in postslist %}
+{% for group in groupslist %}
+	{% if postslist[group].length > 0%}
+		<h2 id="{{ group | url }}">{{ group }}</h2>
+ 	{% endif %}
+  {% for post in postslist[group]%}
     <li class="post-list__item">
       <h1 class="post-list__title">
         <a  href="{{ post.url | url }}" target="_blank">{{ post.data.title | md | safe }}</a>
@@ -22,22 +38,13 @@
       <a class="post-list__read-more" href="{{ post.url | url }}" target="_blank">comment</a>
     </li>
   {% endfor %}
+	
+{% endfor %}
 </ul>
 
 <article class="post">
   <header class="post__header">
     <h1>{{ title | md | safe }}</h1>
-    <div class="post__details">
-      <div>
-        <div class="post-list__tags">
-          {% set courseUrl %}/courses/{{ course }}/{% endset %}
-          <a href="{{ courseUrl | url }}" target="_blank">{{ course }}</a>
-          <span>|</span>
-          {% set yearUrl %}/part-{{ course_year | lower }}//{{ year }}/{% endset %}
-          <a href="{{ yearUrl | url }}" target="_blank">{{ year }}</a>
-        </div>
-      </div>
-    </div>
   </header>
 
   <main class="post__content">
