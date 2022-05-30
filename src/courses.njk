@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: collections
+  data: collections.courses
   size: 1
   alias: course
   filter:
@@ -19,5 +19,10 @@ eleventyComputed:
 ---
 <h1>{{ course | title }}</h1>
 
-{% set postslist = collections[course] %}
+<hr />
+
+{% set group_type = "year" %}
+
+{% set postslist = collections.sortingData[course] %}
+{% set groupslist = collections.sortingData.years | reverse %}
 {% include "posts-list.njk" %}

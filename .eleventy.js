@@ -94,53 +94,153 @@ module.exports = function (eleventyConfig) {
 
     return array.slice(0, n);
   });
-
-  const earliestYear = 2001;
-  const currentYear = 2021; // easily visible to update each year; could obtain by searching posts instead?
-  const yearList = Array.from(new Array(1+currentYear-earliestYear), (x, i) => String(i + earliestYear));
+  
+  
+  
   const triposPartList = ["ia","ib","ii"];
-
-  eleventyConfig.addCollection('yearList', function (collection) {
-    // return [...new Set(collection.getFilteredByTag("part-ia").map(post => String(post.data.year)))]
-    return yearList
+  eleventyConfig.addCollection('triposPartList', function (collection) {
+    return triposPartList;
   });
   
-  for (const triposPart of triposPartList) {
-    // questions by year + part
-    for (const year of yearList) {
-      eleventyConfig.addCollection(triposPart + "-" + year, collection => {
-        return collection.getFilteredByTags("part-"+triposPart, year);
-      });
-    }
-    
-    // collection of all courses for this part
-    let courseSet = new Set();
-    eleventyConfig.addCollection(triposPart+'CourseList', function (collection) {
-      collection.getFilteredByTag("part-"+triposPart).forEach(function (item) {
-        if ('course' in item.data) {
-          courseSet.add(item.data.course)
-        }
-      });
-      return [...courseSet].sort();
-    });
-    
-    // collection of current courses for this part
-    let currentSet = new Set();
-    eleventyConfig.addCollection(triposPart+'Current', function (collection) {
-      collection.getFilteredByTag("part-"+triposPart,currentYear).forEach(function (item) {
-        if ('course' in item.data && item.data.year == currentYear) {
-          currentSet.add(item.data.course)
-        }
-      });
-      return [...currentSet].sort();
-    });
-    
-    // collection of discontinued courses for this part
-    eleventyConfig.addCollection(triposPart+'Old', function (collection) {
-      let discontinuedSet = new Set([...courseSet].filter(x => !currentSet.has(x)));
-      return [...discontinuedSet].sort();
-    });    
-  }
+  // "" denotes "all papers"
+  const paperNos = ["",1,2,3,4];
+
+  // save all the data we need to sort courses as an  object in a collection
+  // need to do this because there isn't any way to reliably cross-communicate between the
+  // addCollection callback functions.
+  
+  eleventyConfig.addCollection('sortingData', function (collection) {
+  	// do this stuff in an addCollection callback so that everything we need can be computed
+  	let sortingData = {"triposPartList" : triposPartList};
+  	let years = new Set();
+  	
+  	// initial run through to find years and courses
+  	for (const triposPart of triposPartList) {
+  		let allCourses = new Set();
+  		for (const item of collection.getFilteredByTag(triposPart.toUpperCase())) {
+  			if ('course' in item.data) {
+  				allCourses.add(item.data.course);
+  			}
+  			if ('year' in item.data) {
+  				years.add(item.data.year);
+  			}
+  		}
+  		sortingData[triposPart]= {"allCourses": [...allCourses].sort()};
+  	}
+  	
+  	const currentYear = String(Math.max(...years));
+  	sortingData.years = [...years].sort().map(year => String(year));
+  	
+  	// separate current and old courses
+  	let courses = new Set();
+  	for (const triposPart of triposPartList) {
+  		let currentCourses = new Set();
+  		let oldCourses = new Set();
+  		for (const course of sortingData[triposPart].allCourses) {
+  			courses.add(course);
+  			if (collection.getFilteredByTags(course, currentYear, triposPart.toUpperCase()).length > 0) {
+  				currentCourses.add(course);
+  			} else {
+  				oldCourses.add(course);
+  			}
+  			
+  		}
+  		sortingData[triposPart].currentCourses = [...currentCourses];
+  		sortingData[triposPart].oldCourses = [...oldCourses].sort();
+  	}
+  	
+  	
+  	// create 'sorted collections' – i.e. for each course, years are grouped together
+  	// note that due to Markov Chains and Electromagnetism switching tripos part in 2004,
+  	// we need the `courses` set rather than iterating over each tripos part.
+  	for (const course of courses) {
+  			let questionList = {};
+  			for (const year of sortingData.years) {
+  				let qns = new Set();
+  				collection.getFilteredByTags(course, year).forEach( (item) => {
+  					qns.add(item);
+  				});
+  				questionList[year] = [...qns].sort(function(a,b) {
+  					// sort by builtin string ordering function:
+  					// puts paper 1 first, *then* section I before section II !
+  					if (a.data.title.toLowerCase() > b.data.title.toLowerCase()) {
+  						return 1;
+  					} else {
+  						return -1;
+  					}
+  				});
+  			}
+  			sortingData[course] = questionList;
+  	}
+  	
+  	// sort into tripos part + year pages
+  	for (const triposPart of triposPartList) {
+  		for (const year of sortingData.years) {
+  			// initialise questionLists to be { "":{}, 1: {}, 2: {}, 3:{}, 4:{} }
+  			let questionLists = Object.fromEntries ( paperNos.map( no => [no, {}]) );
+  			
+  			for (const course of sortingData[triposPart].allCourses) {
+  				let qgroup = collection.getFilteredByTags(course, year, triposPart.toUpperCase());
+  				for (const paper_no of paperNos) {
+  					
+  					questionLists[paper_no][course] = new Set();
+  					qgroup.forEach( (item) => {
+  						if ( paper_no == "" || item.data.title.includes( "Paper "+paper_no ) || item.data.title.includes( paper_no + ".") ) {
+  							questionLists[paper_no][course].add(item);
+  						}
+  					});
+  					questionLists[paper_no][course] = [ ...questionLists[paper_no][course] ].sort(function(a,b) {
+  						if (a.data.title.toLowerCase() > b.data.title.toLowerCase()) {
+  							return 1;
+  						} else {
+  							return -1;
+  						}
+  					});
+  				}
+  			}
+  			sortingData[triposPart][year] = questionLists;
+  		}
+  	}
+  	return sortingData;
+  });
+  
+  
+  // create course collection for purposes of pagination
+  // annoyingly this has to be done separately because eleventy seemingly won't let me
+  // paginate over anything other than a collection,
+  // and you can't cross-communicate between `addCollection` callbacks.
+  eleventyConfig.addCollection ('courses', function (collection) {
+  	let courses = new Set();
+  	// only search through questions...
+  	collection.getFilteredByGlob("**/*.md").forEach( (item) => {
+  		if ("course" in item.data) {
+  			courses.add(item.data.course);
+  		}
+  	});
+  	return [...courses];
+  });
+  
+  // create part+year collection for purposes of pagination
+  // again this is inefficient but required for the above-mentioned reasons
+  eleventyConfig.addCollection ('papers', function (collection)  {
+  	let papers = [];
+  	for (const triposPart of triposPartList) {
+  		let partYears = new Set();
+  		for (const item of collection.getFilteredByTag(triposPart.toUpperCase()) ) {
+  			if ("year" in item.data) {
+  				partYears.add(item.data.year);
+  			}
+  		}
+  		
+  		for (const y of partYears) {
+  			for (const p of paperNos) {
+  				papers.push({"part": triposPart, "year": String(y), paper_no : p});
+  			}
+  		}
+  	}
+  	
+  	return papers;	
+  });
   
   eleventyConfig.addCollection('tagList', function (collection) {
     let tagSet = new Set();

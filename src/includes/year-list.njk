@@ -1,6 +1,15 @@
-{% for year in collections.yearList %}
+{% set paperList = [1,2,3,4] %}
+
+{% for year in collections.sortingData.years %}
   {% set yearUrl %}/{{ courseYear }}/{{ year }}/{% endset %}
 
-  <a href="{{ yearUrl | url }}" class="post-tag">{{ year }}</a>
+<div class="post-tag">
+  <a href="{{ yearUrl | url }}">{{ year }}</a>
+( 
+{% for paperNo in paperList %}
+<a href="{{ (yearUrl + paperNo)  | url }}">P{{ paperNo }}</a>
+{% endfor %}
+)
+</div>
 
 {% endfor %}
