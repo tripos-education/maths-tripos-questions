@@ -38,3 +38,8 @@
 	margin-top: 0;
 }
 
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
