@@ -9,5 +9,3 @@ An archive of questions from the [Cambridge Mathematics Tripos](https://www.math
 
 {% set latestComments = '50' %}
 {% include "tripos-comments.njk" %}
-
-*For older comments, see [GitHub discussions](https://github.com/tripos-education/maths-tripos-questions/discussions).*

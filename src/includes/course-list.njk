@@ -1,14 +1,21 @@
 <h4>Current</h4>
+
+<div class="tags">
 {% for course in collections.sortingData[triposPart].currentCourses%}
   {% set courseUrl %}/courses/{{ course }}/{% endset %}
 
   <a href="{{ courseUrl | url }}" class="post-tag">{{ course }}</a>
 
 {% endfor %}
+</div>
+
 <h4>Discontinued</h4>
+
+<div class="tags">
 {% for course in collections.sortingData[triposPart].oldCourses %}
   {% set courseUrl %}/courses/{{ course }}/{% endset %}
 
   <a href="{{ courseUrl | url }}" class="post-tag">{{ course }}</a>
 
 {% endfor %}
+</div>
