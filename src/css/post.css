@@ -19,6 +19,12 @@
 
 .post__content {
   word-wrap: break-word;
+  /* for some reason without this the posts end up too wide
+  even with `.katex-block` set to scroll,
+  and even though no post actually gets a horizontal scrollbar? */
+  overflow-x: scroll;
+  /* stop random vertical scrollbars */
+  overflow-y: hidden;
 }
 
 .post__aside {
@@ -53,4 +59,9 @@
 .post__pagination span {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+
+.katex-block {
+	overflow-x: scroll;
 }
