@@ -17,6 +17,17 @@ When new questions are added to this site, be wary of the possibility of such va
 
 The current Part IB courses 'Markov Chains' and 'Electromagnetism' were Part II courses prior to 2005.
 
+### Missings stars, daggers, etc.
+
+Often (always?) these are missing from scanned equations and have to be added manually. The easiest way to do it is to use the unicode symbols: *, †, ‡ as follows:
+
+```
+$$
+\tag{*}
+T_{\pm}<\infty \Longrightarrow \limsup _{s \rightarrow T_{\pm}}|K(\gamma(\pm s))|=\infty
+$$
+```
+
 ---
 
 ## FAQ
